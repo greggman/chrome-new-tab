@@ -4,6 +4,7 @@ A simple chrome new tab page that displays bookmarks.
 
 ## Installation
 
+- download or clone this repo
 - Go to the extensions page in Chrome: chrome://extensions
 - Enable the "Developer mode" checkbox in the top right
 - Click "Load unpacked"
