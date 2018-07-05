@@ -7,202 +7,92 @@
   <title>New tab</title>
   <style>
 
-  html, body, div, h1, h2, section, ul, li {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    background: transparent;
+  html {
     box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
   }
 
   body {
     font-size: 18px;
     line-height: 1.5;
-  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: #999;
-    background: #000;
-  }
-
-  #clock {
-    margin: 10px 0;
-    color: #ccc;
-    font-size: 60pt;
-    line-height: 1.0;
-    text-align: center;
-  }
-
-  #wrap {
-    margin: auto;
-    max-width: 1200px;
-    position: relative;
-  }
-
-  #wrap:after {
-  	content: "";
-  	display: table;
-  }
-
-  section {
-    display: block;
-    width: 20%;
-    box-sizing: border-box;
-    padding: 0 30px;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-  }
-
-  section:nth-of-type(1) {
-    left: 0;
-  }
-
-  section:nth-of-type(2) {
-    left: 20%;
-  }
-
-  section:nth-of-type(3) {
-    left: 40%;
-  }
-
-  section:nth-of-type(4) {
-    left: 60%;
-  }
-
-  section:nth-of-type(5) {
-    left: 80%;
-  }
-
-  section:nth-of-type(1) h2 {
-    color: #f00;
-  }
-
-  section:nth-of-type(2) h2 {
-    color: #0c0;
-  }
-
-  section:nth-of-type(3) h2 {
-    color: #6BD6FA;
-  }
-
-  section:nth-of-type(4) h2 {
-    color: #fa0;
-  }
-
-  section:nth-of-type(5) h2 {
-    color: #840;
-  }
-
-  ul {
-    margin: 0;
-    list-style: none;
-  }
-
-  li {
-  }
-
-  a {
-    color: #999;
-    text-decoration: none;
+    color: #000;
+    background: #f26522;
   }
 
   a:hover {
     color: #CD59F7;
   }
 
-  li > ul {
-    margin: 0 0 0 20px;
+  a {
+    text-decoration: none;
   }
 
-  li > ul > li {
+  ul {
+    background: darkorange;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
   }
 
-  #pull-requests {
-    width: 1200px;
-    text-align: center;
-    clear: both;
-    margin: 10px auto;
-  }
-
-  #pull-requests li {
-    margin: 5px 0;
-  }
-
-  #pull-requests ul {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid;
-  }
-
-  #refresh-prs-btn {
-    width: 82px;
+  li {
+    color: #fff;
+    background: darkorange;
     display: block;
-    margin: auto;
-    margin-bottom: 10px;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
   }
 
-  .clearfix:before {
+  li a {
+    color: #fff;
+  }
+
+  li:hover,
+  li:focus-within {
+    background: red;
+    cursor: pointer;
+  }
+
+  li:focus-within a {
+    outline: none;
+  }
+
+  ul li ul {
+    background: orange;
     visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
   }
 
-  code {
-    font-size: 12pt;
-    background: #ddd;
-    color: #555;
-    padding: 5px;
-    border-radius: 3px;
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
   }
+
+  ul li ul li {
+    clear: both;
+    width: 100%;
+  }
+
   </style>
 </head>
 <body>
-  <h1 id="clock">00:00</h1>
-  <div id="wrap" class="clearfix">
-    <section>
-      <h2>Header 1</h2>
-      <ul>
-        <li><a href=""></a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Header 2</h2>
-      <ul>
-        <li><a href=""></a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Header 3</h2>
-      <ul>
-        <li><a href=""></a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Header 4</h2>
-      <ul>
-        <li><a href=""></a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Bookmarks</h2>
-      <ul id="bookmarks"></ul>
-    </section>
-  </div>
-  <div class="clearfix" style="height:20px;"></div>
-  <div id="pull-requests"></div>
-  <button id="refresh-prs-btn">Refresh PRs</button>
-
+  <div id="bookmarks"></div>
   <script src="tab.js"></script>
 </body>
 </html>
