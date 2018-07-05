@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "{{chrome-extension-name}}",
-  "description": "Replace default new tab page in Chrome with a useful new tab page.",
+  "name": "chrome new tab bookmarks",
+  "description": "Replace default new tab page in Chrome with just bookmarks.",
   "version": "1.0",
 
   "chrome_url_overrides" : {
