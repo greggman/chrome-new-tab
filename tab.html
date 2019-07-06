@@ -32,18 +32,21 @@
   }
 
   ul {
-    background: darkorange;
+    filter: brightness(110%);
     list-style: none;
     margin: 0;
     padding-left: 0;
+    display: block;
   }
+
+  ul:hover {
+  }
+
 
   li {
     color: #fff;
     background: darkorange;
-    display: block;
-    float: left;
-    padding: 1rem;
+    display: inline-block;
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
@@ -51,6 +54,8 @@
 
   li a {
     color: #fff;
+    padding: 1rem;
+    display: block;
   }
 
   li:hover,
